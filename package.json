@@ -1,0 +1,27 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "loads an inventory of a workplace",
+  "main": "index.js",
+  "scripts": {
+    "test": "invent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geordneterziegelberg/inventory.git"
+  },
+  "keywords": [
+    "inventory",
+    "workplacce"
+  ],
+  "author": "SG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geordneterziegelberg/inventory/issues"
+  },
+  "homepage": "https://github.com/geordneterziegelberg/inventory#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
