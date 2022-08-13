@@ -22,6 +22,7 @@
   "homepage": "https://github.com/geordneterziegelberg/inventory#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "mongodb": "^4.8.1",
     "nodemon": "^2.0.19"
   }
 }
