@@ -1,10 +1,16 @@
-const { Router } = require('express') //von VScode
-const express = require('express')
-const route = express.Router()
-const services = require('../services/render')
+import { Router } from 'express' //von VScode
+import renderPages from '../services/render.js'
+import inventoryController from '../controller/controller.js'
 
-route.get('/', services.homePage)
-  
-route.get('/add-user', services.add_user)
+const route = new Router
 
-module.exports = route
+//views
+route.get('/', renderPages.homePage)
+route.get('/add-user', renderPages.add_user)
+route.get('/search', renderPages.searchItem)
+
+//api
+route.post('/api/user', inventoryController.create)
+route.post('/api/search/:q', inventoryController.search)
+
+export default route
