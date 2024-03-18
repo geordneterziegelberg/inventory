@@ -7,6 +7,7 @@ const express = require("express")
 const app = express()
 const expressLayouts = require("express-ejs-layouts")
 const bodyParser = require("body-parser")
+const cors = require("cors")
 
 // router variables
 const indexRouter = require("./routes/index")
@@ -19,6 +20,7 @@ app.set("layout", "layouts/layout")
 app.use(expressLayouts)
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({limit: "10mb", extended: false}))
+app.use(cors())
 
 // database
 const mongoose = require("mongoose")
@@ -29,7 +31,7 @@ db.once("open", () => console.log("connected to DB"))
 
 // router
 app.use("/", indexRouter)
-app.use("/items", itemRouter)
+app.use("/api/items", itemRouter)
 
 // port
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 8000)
